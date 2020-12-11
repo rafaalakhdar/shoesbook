@@ -1,0 +1,26 @@
+{
+  "shoe": [
+    {
+      "id": 2,
+      "brand": "addidas",
+      "modele": "Yezzy v2",
+      "size": "42",
+      "color": "black",
+      "quantity": "3",
+      "price": "225",
+      "web": "www.adidas.com",
+      "release": "22/11/1111"
+    },
+    {
+      "id": 3,
+      "brand": "Nike jordan",
+      "modele": "air force one",
+      "size": "41",
+      "color": "triple white",
+      "quantity": "14",
+      "price": "110",
+      "web": "www.nike.com",
+      "release": "22/11/1111"
+    }
+  ]
+}

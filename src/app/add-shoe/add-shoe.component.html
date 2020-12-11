@@ -1,0 +1,138 @@
+
+
+<form #f="ngForm" *ngIf="saved">
+  <h1 style="color: #ff0000">Add shoes</h1>
+  <div class="form-group">
+    <label>shoe brand</label>
+    <input
+      type="text"
+      name="brand"
+      class="form-control"
+      [(ngModel)]="shoes.brand"
+      #br="ngModel"
+      pattern="[a-zA-Z, ]+$"
+      required
+    />
+  </div>
+  <div class="alert alert-danger" *ngIf="br.touched && br.invalid">
+    A brand name is required
+  </div>
+
+  <div class="form-group">
+    <label>Modele</label>
+    <input
+      type="text"
+      name="mode"
+      class="form-control"
+      [(ngModel)]="shoes.modele"
+      required
+      minlength="2"
+      #md="ngModel"
+      pattern="[a-zA-Z, ]+$"
+    />
+  </div>
+  <div class="alert alert-danger" *ngIf="md.touched && md.invalid">
+    <div *ngIf="md.errors.required">modele is required</div>
+    <div *ngIf="md.errors.minlength">minlength is 2</div>
+    <div *ngIf="md.errors.pattern">enter a valid modele</div>
+  </div>
+
+
+
+  <div class="form-group">
+    <label>date realease</label>
+    <input
+      type="date"
+      name="dateR"
+      class="form-control"
+      [(ngModel)]="shoes.release"
+      #dt="ngModel"
+      required
+    />
+  </div>
+
+  <div class="alert alert-danger" *ngIf="dt.touched && dt.invalid">
+    A date is required
+  </div>
+
+  <div class="form-group">
+    <label>color </label>
+    <input
+      type="text"
+      name="color"
+      class="form-control"
+      [(ngModel)]="shoes.color"
+      #c="ngModel"
+      pattern="[a-zA-Z]+$"
+      required
+    />
+  </div>
+  <div class="alert alert-danger" *ngIf="c.touched && c.invalid">
+    A color is required
+  </div>
+
+  <div class="form-group">
+    <label>URL web </label>
+    <input
+      type="url"
+      name="url"
+      id="url"
+      placeholder="www.example.com"
+      pattern="www.*"
+      class="form-control"
+      [(ngModel)]="shoes.web"
+      #w="ngModel"
+
+      required
+
+    />
+  </div>
+  <div class="alert alert-danger" *ngIf="w.touched && w.invalid">
+    A Url web is required
+  </div>
+
+  <div class="form-group">
+    <label>prix </label>
+    <input
+      type="number"
+      name="price"
+      class="form-control"
+      [(ngModel)]="shoes.price"
+      #p="ngModel"
+      required
+    />
+  </div>
+  <div class="alert alert-danger" *ngIf="p.touched && p.invalid">
+    price is required
+  </div>
+  <div class="alert alert-danger" *ngIf="p.value < 0">prix>0</div>
+
+  <div class="form-group">
+    <label>quantite </label>
+    <input
+      type="number"
+      name="qu"
+      class="form-control"
+      [(ngModel)]="shoes.quantity"
+      #q="ngModel"
+      required
+    />
+  </div>
+  <div class="alert alert-danger" *ngIf="q.touched && q.invalid">
+   quantity is required
+  </div>
+  <div class="alert alert-danger" *ngIf="q.value < 0">quantity>0</div>
+
+  <div style="display: flex; justify-content: space-between">
+
+
+    <button
+      class="btn btn-success"
+      type="submit"
+      [disabled]="f.invalid"
+      (click)="save()">
+      save
+    </button>
+
+  </div>
+</form>
