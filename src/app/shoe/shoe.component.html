@@ -29,7 +29,16 @@
                 <tbody *ngFor="let s of shoe">
                 <tr>
 
-                  <td><a href="#"><img src="assets/img/detailsquare.jpg" alt="White Blouse Armani" class="img-fluid"><p>{{ s.brand }}</p></a></td>
+
+                 <div style="display:flex; flex-direction: column" ><td>
+                  <img
+                    [src]="sanitizeImageUrl(s.image)"
+                    alt="{{ s.brand }}"
+                    style="max-height: 300px;"
+                  /></td>
+                  <p style="margin-left: 5px;">{{ s.brand }}</p>
+                </div>
+
 
                   <td><a href="https://{{ s.web }}/">{{ s.web }}</a></td>
 
@@ -51,6 +60,7 @@
                 </tbody>
 
               </table>
+
             </div>
             <div class="box-footer d-flex justify-content-between align-items-center">
               <div class="left-col"><a href="shop-category.html" class="btn btn-secondary mt-0"><i class="fa fa-chevron-left"></i> Continue shopping</a></div>
@@ -69,28 +79,28 @@
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="product">
-              <div class="image"><a href="shop-detail.html"><img src="img/product2.jpg" alt="" class="img-fluid image1"></a></div>
+              <div class="image"><a href="shop-detail.html"><img src="assets/images/airforce.jpg" alt="" class="img-fluid image1"></a></div>
               <div class="text">
-                <h3 class="h5"><a href="shop-detail.html">Fur coat</a></h3>
-                <p class="price">$143</p>
+                <h3 class="h5"><a href="shop-detail.html">FlightClub</a></h3>
+                <p class="price">$140</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="product">
-              <div class="image"><a href="shop-detail.html"><img src="img/product3.jpg" alt="" class="img-fluid image1"></a></div>
+              <div class="image"><a href="shop-detail.html"><img src="assets/images/jordan.jpg" alt="" class="img-fluid image1"></a></div>
               <div class="text">
-                <h3 class="h5"><a href="shop-detail.html">Fur coat</a></h3>
-                <p class="price">$143</p>
+                <h3 class="h5"><a href="shop-detail.html"> Goat</a></h3>
+                <p class="price">$186</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="product">
-              <div class="image"><a href="shop-detail.html"><img src="img/product1.jpg" alt="" class="img-fluid image1"></a></div>
+              <div class="image"><a href="shop-detail.html"><img src="assets/images/yeezy.png" alt="" class="img-fluid image1"></a></div>
               <div class="text">
-                <h3 class="h5"><a href="shop-detail.html">Fur coat</a></h3>
-                <p class="price">$143</p>
+                <h3 class="h5"><a href="shop-detail.html">Stockx</a></h3>
+                <p class="price">$123</p>
 
               </div>
             </div>

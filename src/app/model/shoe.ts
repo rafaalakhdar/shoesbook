@@ -8,6 +8,7 @@ export class Shoe{
   price: number;
   web: number;
   release: Date;
+  image: string;
 
 
 }

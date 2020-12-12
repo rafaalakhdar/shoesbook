@@ -54,7 +54,21 @@
   <div class="alert alert-danger" *ngIf="dt.touched && dt.invalid">
     A date is required
   </div>
-
+  <div class="form-group">
+    <label>pointure </label>
+    <input
+      type="number"
+      name="point"
+      class="form-control"
+      [(ngModel)]="shoes.size"
+      #poi="ngModel"
+      required
+    />
+  </div>
+  <div class="alert alert-danger" *ngIf="poi.touched && poi.invalid">
+    size is required
+  </div>
+  <div class="alert alert-danger" *ngIf="poi.value < 36 || poi.value>48">size between 36 and 48</div>
   <div class="form-group">
     <label>color </label>
     <input
@@ -118,6 +132,7 @@
       required
     />
   </div>
+
   <div class="alert alert-danger" *ngIf="q.touched && q.invalid">
    quantity is required
   </div>
@@ -126,7 +141,14 @@
   <div style="display: flex; justify-content: space-between">
 
 
-    <button
+
+  <div class="form-group">
+    <label>add image</label> <br />
+    <input type="file" name="title" [(ngModel)]="shoes.image" />
+  </div>
+
+
+  <button
       class="btn btn-success"
       type="submit"
       [disabled]="f.invalid"

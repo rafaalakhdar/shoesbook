@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Shoe} from '../model/shoe';
 import {ShoeServiceService} from '../shared/shoe-service.service';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-shoe',
@@ -10,11 +11,18 @@ import {ShoeServiceService} from '../shared/shoe-service.service';
 export class ShoeComponent implements OnInit {
 shoe: Shoe[];
 s: Shoe;
-  constructor(private service: ShoeServiceService) { }
+  constructor(private service: ShoeServiceService, private syn: DomSanitizer) { }
 
+
+  sanitizeImageUrl(imageUrl: string): SafeUrl {
+
+    return this.syn.bypassSecurityTrustUrl( 'assets/images/' + imageUrl.substring(12));
+
+  }
   ngOnInit(): void {
     this.service.getShoes().subscribe((data: Shoe[]) => this.shoe = data );
     this.s = new Shoe();
+    console.log(this.shoe);
   }
   delete(id){
     this.service.DeleteShoes(id).subscribe(
@@ -28,4 +36,6 @@ s: Shoe;
         console.log(err);
       }
     ); }
+
+
 }

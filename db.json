@@ -9,7 +9,8 @@
       "quantity": "3",
       "price": "225",
       "web": "www.adidas.com",
-      "release": "22/11/1111"
+      "release": "22/11/1111",
+      "image": ""
     },
     {
       "id": 3,
@@ -20,7 +21,56 @@
       "quantity": "14",
       "price": "110",
       "web": "www.nike.com",
-      "release": "22/11/1111"
+      "release": "22/11/1111",
+      "image": ""
+    },
+    {
+      "brand": "prada",
+      "modele": "prd",
+      "release": "2020-12-03",
+      "color": "blanc",
+      "web": "www.prada.com",
+      "price": 400,
+      "quantity": 1,
+      "id": 4,
+      "size": 37,
+      "image": ""
+    },
+    {
+      "image": "C:\\fakepath\\images.jpg",
+      "brand": "dzdz",
+      "modele": "azda",
+      "release": "2020-12-30",
+      "size": 42,
+      "color": "ada",
+      "web": "www.fefz.qdcz",
+      "price": 222,
+      "quantity": 2,
+      "id": 5
+    },
+    {
+      "brand": "sfg",
+      "modele": "rg",
+      "release": "2020-12-23",
+      "size": 42,
+      "color": "svs",
+      "web": "www.wdwe.w",
+      "price": 2,
+      "quantity": 2,
+      "image": "C:\\fakepath\\jordan.jpg",
+      "id": 6
+    },
+    {
+      "modele": "ae",
+      "image": "C:\\fakepath\\airforce.jpg",
+      "size": 45,
+      "color": "xfgn",
+      "web": "www.rg",
+      "price": 1,
+      "quantity": 1,
+      "brand": "dhjd",
+      "release": "2020-12-17",
+      "id": 7
     }
   ]
 }
