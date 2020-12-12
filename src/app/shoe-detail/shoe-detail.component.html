@@ -1,167 +1,150 @@
-<div *ngIf="shoes">
-
-  <form #f="ngForm">
-    <h1 style="color: #ff0000">Edit Shoes</h1>
-    <div class="form-group">
-      <label>shoe brand</label>
-      <input
-        type="text"
-        name="brand"
-        class="form-control"
-        [(ngModel)]="shoes.brand"
-        #br="ngModel"
-        pattern="[a-zA-Z, ]+$"
-        required
-      />
-    </div>
-    <div class="alert alert-danger" *ngIf="br.touched && br.invalid">
-      A brand name is required
-    </div>
-
-    <div class="form-group">
-      <label>Modele</label>
-      <input
-        type="text"
-        name="mode"
-        class="form-control"
-        [(ngModel)]="shoes.modele"
-        required
-        minlength="2"
-        #md="ngModel"
-        pattern="[a-zA-Z, ]+$"
-      />
-    </div>
-    <div class="alert alert-danger" *ngIf="md.touched && md.invalid">
-      <div *ngIf="md.errors.required">modele is required</div>
-      <div *ngIf="md.errors.minlength">minlength is 2</div>
-      <div *ngIf="md.errors.pattern">enter a valid modele</div>
-    </div>
-
-
-
-    <div class="form-group">
-      <label>date realease</label>
-      <input
-        type="date"
-        name="dateR"
-        class="form-control"
-        [(ngModel)]="shoes.release"
-        #dt="ngModel"
-        required
-      />
-    </div>
-
-    <div class="alert alert-danger" *ngIf="dt.touched && dt.invalid">
-      A date is required
-    </div>
-    <div class="form-group">
-      <label>pointure </label>
-      <input
-        type="number"
-        name="point"
-        class="form-control"
-        [(ngModel)]="shoes.size"
-        #poi="ngModel"
-        required
-      />
-    </div>
-    <div class="alert alert-danger" *ngIf="poi.touched && poi.invalid">
-      size is required
-    </div>
-    <div class="alert alert-danger" *ngIf="poi.value < 36 || poi.value>48">size between 36 and 48</div>
-    <div class="form-group">
-      <label>color </label>
-      <input
-        type="text"
-        name="color"
-        class="form-control"
-        [(ngModel)]="shoes.color"
-        #c="ngModel"
-        pattern="[a-zA-Z]+$"
-        required
-      />
-    </div>
-    <div class="alert alert-danger" *ngIf="c.touched && c.invalid">
-      A color is required
-    </div>
-
-    <div class="form-group">
-      <label>URL web </label>
-      <input
-        type="url"
-        name="url"
-        id="url"
-        placeholder="www.example.com"
-        pattern="www.*"
-        class="form-control"
-        [(ngModel)]="shoes.web"
-        #w="ngModel"
-
-        required
-
-      />
-    </div>
-    <div class="alert alert-danger" *ngIf="w.touched && w.invalid">
-      A Url web is required
-    </div>
-
-    <div class="form-group">
-      <label>prix </label>
-      <input
-        type="number"
-        name="price"
-        class="form-control"
-        [(ngModel)]="shoes.price"
-        #p="ngModel"
-        required
-      />
-    </div>
-    <div class="alert alert-danger" *ngIf="p.touched && p.invalid">
-      price is required
-    </div>
-    <div class="alert alert-danger" *ngIf="p.value < 0">prix>0</div>
-
-    <div class="form-group">
-      <label>quantite </label>
-      <input
-        type="number"
-        name="qu"
-        class="form-control"
-        [(ngModel)]="shoes.quantity"
-        #q="ngModel"
-        required
-      />
-    </div>
-    <div class="alert alert-danger" *ngIf="q.touched && q.invalid">
-      quantity is required
-    </div>
-    <div class="alert alert-danger" *ngIf="q.value < 0">quantity>0</div>
-
-    <div style="display: flex; justify-content: space-between">
-      <div style="display:flex; flex-direction: column" ><td>
-        <img
-          [src]="sanitizeImageUrl(shoes.image)"
-          alt="{{ shoes.brand }}"
-          class="img-responsive"
-          style="max-height: 300px;"
-        /></td>
-
-        <label>changer image</label> <br />
-        <input type="file" name="title" [(ngModel)]="shoes.image" />
-
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Edit Shoes</h4>
+  <button type="button" class="close" aria-label="Close" (click)="save()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div *ngIf="shoes">
+    <form [formGroup]="form" >
+      <div class="form-group">
+        <label>shoe brand</label>
+        <input
+          type="text"
+          name="brand"
+          class="form-control"
+          formControlName="brand"
+        />
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="form.get('brand').touched && form.get('brand').invalid &&  form.get('brand').hasError('required')">
+        A brand name is required
+      </div>
+      <div class="form-group">
+        <label>Modeless</label>
+        <input
+          type="text"
+          name="brand"
+          class="form-control"
+          formControlName="modele"
+        />
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="form.get('modele').touched && form.get('modele').invalid && form.get('modele').hasError('required')">
+        A modele is required
+      </div>
+      <div class="form-group">
+        <label>date realease</label>
+        <input
+          type="text"
+          name="brand"
+          class="form-control"
+          formControlName="release"
+        />
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="form.get('release').touched && form.get('release').invalid && form.get('release').hasError('required')">
+        A date is required
       </div>
 
 
-      <button
-        class="btn btn-success"
-        type="submit"
-        style="background-color: aqua"
-        [disabled]="f.invalid"
-        (click)="save()">
-        Edit
-      </button>
+      <div class="form-group">
+        <label>pointure</label>
+        <input
+          type="number"
+          min="36"
+          max="48"
+          name="brand"
+          class="form-control"
+          formControlName="size"
+        />
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="form.get('size').touched && form.get('size').invalid && form.get('size').hasError('required')">
+        A size is required
+      </div>
 
-    </div>
-  </form>
 
-</div>
+      <div class="form-group">
+        <label>color</label>
+        <input
+          type="text"
+          name="brand"
+          class="form-control"
+          formControlName="color"
+        />
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="form.get('color').touched && form.get('color').invalid && form.get('color').hasError('required')">
+        A color is required
+      </div>
+      <div class="form-group">
+        <label>URL web</label>
+        <input
+          type="text"
+          name="brand"
+          class="form-control"
+          formControlName="web"
+        />
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="form.get('web').touched && form.get('web').invalid && form.get('web').hasError('required')">
+        A color is required
+      </div>
+
+      <div class="form-group">
+        <label>prix</label>
+        <input
+          type="text"
+          name="brand"
+          class="form-control"
+          formControlName="price"
+        />
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="form.get('price').touched && form.get('price').invalid && form.get('price').hasError('required')">
+        A prix is required
+      </div>
+
+      <div class="form-group">
+        <label>quantite</label>
+        <input
+          type="text"
+          name="brand"
+          class="form-control"
+          formControlName="quantity"
+        />
+      </div>
+      <div class="alert alert-danger"
+           *ngIf="form.get('quantity').touched && form.get('quantity').invalid && form.get('quantity').hasError('required')">
+        A quantity is required
+      </div>
+      <div style="display: flex; justify-content: space-between">
+        <div style="display:flex; flex-direction: column">
+          <td>
+            <img
+              [src]="sanitizeImageUrl(shoes.image)"
+              alt="{{ shoes.brand }}"
+              class="img-responsive"
+              style="max-height: 300px;"
+            /></td>
+
+          <label>changer image</label> <br/>
+          <input (change)="changeImage($event)" type="file" name="title" formControlName="image"/>
+
+        </div>
+      </div>
+      <div class="form-group f-right">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="form.invalid"
+          (click)="save()">
+          <span class="fa fa-save"></span>
+          Edit
+        </button>
+      </div>
+    </form>
+
+
+

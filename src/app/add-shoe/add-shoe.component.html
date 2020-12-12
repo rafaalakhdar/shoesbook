@@ -148,13 +148,15 @@
   </div>
 
 
-  <button
+  <div class="form-group">
+    <button
       class="btn btn-success"
       type="submit"
       [disabled]="f.invalid"
       (click)="save()">
+      <span class="fa fa-save"></span>
       save
     </button>
-
+  </div>
   </div>
 </form>

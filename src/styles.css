@@ -541,9 +541,7 @@ table {
 }
 
 table img {
-  min-width: 50px !important;
-  max-width: 50px !important;
-  height: 50px;
+  width: 145px;
 }
 
 table input[type="number"] {
@@ -679,6 +677,7 @@ header.nav-holder.sticky {
   background: #fff;
   padding-top: 0;
   padding-bottom: 0;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 #navbar .navbar-toggler {

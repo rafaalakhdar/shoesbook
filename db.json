@@ -1,52 +1,17 @@
 {
   "shoe": [
     {
-      "id": 2,
-      "brand": "addidas",
-      "modele": "Yezzy v2",
-      "size": "42",
-      "color": "black",
-      "quantity": "3",
-      "price": "225",
-      "web": "www.adidas.com",
-      "release": "22/11/1111",
-      "image": ""
-    },
-    {
-      "id": 3,
-      "brand": "Nike jordan",
-      "modele": "air force one",
-      "size": "41",
-      "color": "triple white",
-      "quantity": "14",
-      "price": "110",
-      "web": "www.nike.com",
-      "release": "22/11/1111",
-      "image": ""
-    },
-    {
-      "brand": "prada",
-      "modele": "prd",
-      "release": "2020-12-03",
-      "color": "blanc",
-      "web": "www.prada.com",
-      "price": 400,
-      "quantity": 1,
-      "id": 4,
-      "size": 37,
-      "image": ""
-    },
-    {
-      "image": "C:\\fakepath\\images.jpg",
+      "image": "C:\\fakepath\\blog-avatar2.jpg",
       "brand": "dzdz",
       "modele": "azda",
       "release": "2020-12-30",
       "size": 42,
       "color": "ada",
       "web": "www.fefz.qdcz",
-      "price": 222,
-      "quantity": 2,
-      "id": 5
+      "price": "2223",
+      "quantity": "3",
+      "id": 5,
+      "modeless": "azda"
     },
     {
       "brand": "sfg",
@@ -55,7 +20,7 @@
       "size": 42,
       "color": "svs",
       "web": "www.wdwe.w",
-      "price": 2,
+      "price": "222",
       "quantity": 2,
       "image": "C:\\fakepath\\jordan.jpg",
       "id": 6
@@ -66,7 +31,7 @@
       "size": 45,
       "color": "xfgn",
       "web": "www.rg",
-      "price": 1,
+      "price": "5666",
       "quantity": 1,
       "brand": "dhjd",
       "release": "2020-12-17",

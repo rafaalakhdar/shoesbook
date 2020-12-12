@@ -1,18 +1,12 @@
-
-
-
-
 <div id="content">
   <div class="container">
     <div class="row bar">
-      <div class="col-lg-12">
-        <p class="text-muted lead">You currently many item(s) in your cart.</p>
-      </div>
-      <div id="basket" class="col-lg-9" >
-        <div class="box mt-0 pb-0 no-horizontal-padding" >
+
+      <div id="basket" class="col-md-12">
+        <div class="box mt-0 pb-0 no-horizontal-padding">
           <form method="get" action="shop-checkout1.html">
-            <div class="table-responsive" >
-              <table class="table"  >
+            <div class="table-responsive">
+              <table class="table table-hover">
                 <thead>
                 <tr>
                   <th colspan="2">Marque</th>
@@ -24,24 +18,24 @@
                   <th colspan="2">date de sortie</th>
                   <th>coleur</th>
                   <th>Total</th>
+                  <th></th>
                 </tr>
                 </thead>
                 <tbody *ngFor="let s of shoe">
                 <tr>
 
 
-                 <div style="display:flex; flex-direction: column" ><td>
-                  <img
-                    [src]="sanitizeImageUrl(s.image)"
-                    alt="{{ s.brand }}"
-                    style="max-height: 300px;"
-                  /></td>
-                  <p style="margin-left: 5px;">{{ s.brand }}</p>
-                </div>
+                  <td>
+                    <img
+                      [src]="sanitizeImageUrl(s.image)"
+                      alt="{{ s.brand }}"
+                      style="max-height: 300px;"
+                    />
+                    <p style="margin-left: 5px;">{{ s.brand }}</p>
+                  </td>
 
 
                   <td><a href="https://{{ s.web }}/">{{ s.web }}</a></td>
-
 
 
                   <td>{{ s.quantity }}</td>
@@ -52,9 +46,19 @@
                   <td colspan="2">{{ s.release }}</td>
                   <td>{{ s.color }}</td>
                   <td>{{ s.price }}</td>
-                  <button class="btn btn-primary"  (click)="delete(s.id)" style="background-color: #c22026">Delete</button>
-                  <button class="btn btn-primary" routerLink="/shoe/{{ s.id }}" style="background-color: #ffc107">Edit</button>
-                  <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                  <td>
+                    <div>
+                      <button class="btn btn-outline-danger" (click)="delete(s.id)">
+                        <i class="fa fa-trash-o"></i>
+                        Delete
+                      </button>
+<!--                      routerLink="/shoe/{{ s.id }}"-->
+                      <button class="btn btn-outline-primary" (click)="open(s.id)">
+                        <i class="fa fa-edit"></i>
+                        Edit
+                      </button>
+                    </div>
+                  </td>
                 </tr>
 
                 </tbody>
@@ -62,42 +66,39 @@
               </table>
 
             </div>
-            <div class="box-footer d-flex justify-content-between align-items-center">
-              <div class="left-col"><a href="shop-category.html" class="btn btn-secondary mt-0"><i class="fa fa-chevron-left"></i> Continue shopping</a></div>
-              <div class="right-col">
-                <button class="btn btn-secondary"><i class="fa fa-refresh"></i> Update cart</button>
-                <button type="submit" class="btn btn-template-outlined">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
-              </div>
-            </div>
+
           </form>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-md-3 col-md-6">
             <div class="box text-uppercase mt-0 mb-2">
               <h3>You may also like these products</h3>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-md-3 col-md-6">
             <div class="product">
-              <div class="image"><a href="shop-detail.html"><img src="assets/images/airforce.jpg" alt="" class="img-fluid image1"></a></div>
+              <div class="image"><a href="shop-detail.html"><img src="assets/images/airforce.jpg" alt=""
+                                                                 class="img-fluid image1"></a></div>
               <div class="text">
                 <h3 class="h5"><a href="shop-detail.html">FlightClub</a></h3>
                 <p class="price">$140</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-md-3 col-md-6">
             <div class="product">
-              <div class="image"><a href="shop-detail.html"><img src="assets/images/jordan.jpg" alt="" class="img-fluid image1"></a></div>
+              <div class="image"><a href="shop-detail.html"><img src="assets/images/jordan.jpg" alt=""
+                                                                 class="img-fluid image1"></a></div>
               <div class="text">
                 <h3 class="h5"><a href="shop-detail.html"> Goat</a></h3>
                 <p class="price">$186</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-md-3 col-md-6">
             <div class="product">
-              <div class="image"><a href="shop-detail.html"><img src="assets/images/yeezy.png" alt="" class="img-fluid image1"></a></div>
+              <div class="image"><a href="shop-detail.html"><img src="assets/images/yeezy.png" alt=""
+                                                                 class="img-fluid image1"></a></div>
               <div class="text">
                 <h3 class="h5"><a href="shop-detail.html">Stockx</a></h3>
                 <p class="price">$123</p>
@@ -107,7 +108,6 @@
           </div>
         </div>
       </div>
-<app-add-shoe (eventAddProduct)="pushShoes($event)"></app-add-shoe>
 
     </div>
   </div>
