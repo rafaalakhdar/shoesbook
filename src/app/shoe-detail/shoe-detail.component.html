@@ -17,11 +17,11 @@
         />
       </div>
       <div class="alert alert-danger"
-           *ngIf="form.get('brand').touched && form.get('brand').invalid &&  form.get('brand').hasError('required')">
+           *ngIf="form.get('brand').touched && form.get('brand').invalid ">
         A brand name is required
       </div>
       <div class="form-group">
-        <label>Modeless</label>
+        <label>Modele</label>
         <input
           type="text"
           name="brand"
@@ -30,20 +30,20 @@
         />
       </div>
       <div class="alert alert-danger"
-           *ngIf="form.get('modele').touched && form.get('modele').invalid && form.get('modele').hasError('required')">
+           *ngIf="form.get('modele').touched && form.get('modele').invalid ">
         A modele is required
       </div>
       <div class="form-group">
         <label>date realease</label>
         <input
-          type="text"
+          type="date"
           name="brand"
           class="form-control"
           formControlName="release"
         />
       </div>
       <div class="alert alert-danger"
-           *ngIf="form.get('release').touched && form.get('release').invalid && form.get('release').hasError('required')">
+           *ngIf="form.get('release').touched && form.get('release').invalid ">
         A date is required
       </div>
 
@@ -60,8 +60,8 @@
         />
       </div>
       <div class="alert alert-danger"
-           *ngIf="form.get('size').touched && form.get('size').invalid && form.get('size').hasError('required')">
-        A size is required
+           *ngIf="form.get('size').touched && form.get('size').invalid ">
+        A size is required ==> size value between (36 and 48)
       </div>
 
 
@@ -75,7 +75,7 @@
         />
       </div>
       <div class="alert alert-danger"
-           *ngIf="form.get('color').touched && form.get('color').invalid && form.get('color').hasError('required')">
+           *ngIf="form.get('color').touched && form.get('color').invalid ">
         A color is required
       </div>
       <div class="form-group">
@@ -83,41 +83,43 @@
         <input
           type="text"
           name="brand"
+          placeholder="www.example.com"
           class="form-control"
           formControlName="web"
         />
       </div>
       <div class="alert alert-danger"
-           *ngIf="form.get('web').touched && form.get('web').invalid && form.get('web').hasError('required')">
-        A color is required
+           *ngIf="form.get('web').touched && form.get('web').invalid ">
+        A website is required should be www.exemple.com
       </div>
 
       <div class="form-group">
         <label>prix</label>
         <input
-          type="text"
+          type="number"
           name="brand"
           class="form-control"
           formControlName="price"
         />
       </div>
       <div class="alert alert-danger"
-           *ngIf="form.get('price').touched && form.get('price').invalid && form.get('price').hasError('required')">
-        A prix is required
+           *ngIf="form.get('price').touched && form.get('price').invalid ">
+        A price is required. value should be > 0
       </div>
 
       <div class="form-group">
         <label>quantite</label>
         <input
-          type="text"
+          type="number"
           name="brand"
+          min="0"
           class="form-control"
           formControlName="quantity"
         />
       </div>
       <div class="alert alert-danger"
-           *ngIf="form.get('quantity').touched && form.get('quantity').invalid && form.get('quantity').hasError('required')">
-        A quantity is required
+           *ngIf="form.get('quantity').touched && form.get('quantity').invalid ">
+        A quantity is required should be > 0
       </div>
       <div style="display: flex; justify-content: space-between">
         <div style="display:flex; flex-direction: column">

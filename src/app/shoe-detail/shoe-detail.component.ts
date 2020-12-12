@@ -58,13 +58,13 @@ export class ShoeDetailComponent implements OnInit {
 
   initForm() {
     this.form = new FormGroup({
-      brand: new FormControl(this.shoes.brand, {validators: [Validators.required]}),
-      modele: new FormControl(this.shoes.modele, {validators: [Validators.required]}),
-      size: new FormControl(this.shoes.size, {validators: [Validators.required,]}),
-      color: new FormControl(this.shoes.color, {validators: [Validators.required]}),
-      quantity: new FormControl(this.shoes.quantity, {validators: [Validators.required]}),
-      price: new FormControl(this.shoes.price, {validators: [Validators.required]}),
-      web: new FormControl(this.shoes.web, {validators: [Validators.required]}),
+      brand: new FormControl(this.shoes.brand, {validators: [Validators.required, Validators.pattern('[a-zA-Z, ]+$')]}),
+      modele: new FormControl(this.shoes.modele, {validators: [Validators.required, Validators.pattern('[a-zA-Z, ]+$')]}),
+      size: new FormControl(this.shoes.size, {validators: [Validators.required, Validators.min(36), Validators.max(48)]}),
+      color: new FormControl(this.shoes.color, {validators: [Validators.required, Validators.pattern('[a-zA-Z, ]+$')]}),
+      quantity: new FormControl(this.shoes.quantity, {validators: [Validators.required, Validators.minLength(1), Validators.maxLength(3)]}),
+      price: new FormControl(this.shoes.price, {validators: [Validators.required, Validators.min(1)]}),
+      web: new FormControl(this.shoes.web, {validators: [Validators.required, Validators.pattern('www.*')]}),
       release: new FormControl(this.shoes.release, {validators: [Validators.required]}),
       image: new FormControl(this.shoes.image, {validators: [Validators.required]})
     });

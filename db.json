@@ -1,15 +1,15 @@
 {
   "shoe": [
     {
-      "image": "C:\\fakepath\\blog-avatar2.jpg",
-      "brand": "dzdz",
-      "modele": "azda",
+      "image": "C:\\fakepath\\airforce.jpg",
+      "brand": "sbs",
+      "modele": "svs",
       "release": "2020-12-30",
-      "size": 42,
-      "color": "ada",
-      "web": "www.fefz.qdcz",
-      "price": "2223",
-      "quantity": "3",
+      "size": 48,
+      "color": "dhd",
+      "web": "www.nike.com",
+      "price": 4,
+      "quantity": 5,
       "id": 5,
       "modeless": "azda"
     },

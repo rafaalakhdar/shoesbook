@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import {ShoeDetailComponent} from './shoe-detail/shoe-detail.component';
 import {ShoeComponent} from './shoe/shoe.component';
 import {AddShoeComponent} from './add-shoe/add-shoe.component';
+import {ContactComponent} from './contact/contact.component';
 
 
 const routes: Routes = [{path: 'shoe/:id', component: ShoeDetailComponent},
   {path: 'shoeList', component: ShoeComponent},
   {path: 'AddShoe', component: AddShoeComponent},
+  {path: 'Contact', component: ContactComponent},
   {path: '', redirectTo: '/shoeList', pathMatch : 'full'}];
 
 @NgModule({
