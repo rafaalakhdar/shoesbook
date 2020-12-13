@@ -13,6 +13,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './contact/contact.component';
 import { SearchPipe } from './shared/search.pipe';
 import { HomeComponent } from './home/home.component';
+import { ZoomDirective } from './zoom.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     ContactComponent,
     SearchPipe,
+    ZoomDirective,
     HomeComponent
   ],
   imports: [
