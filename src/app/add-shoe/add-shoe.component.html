@@ -1,9 +1,8 @@
-
-
 <form #f="ngForm">
-  <h1 style="color: #ff0000">Add shoes</h1>
+  <br>
+  <h2 style="color: blue" align="center">Ajouter Chaussure</h2>
   <div class="form-group">
-    <label>shoe brand</label>
+    <label>Marque</label>
     <input
       type="text"
       name="brand"
@@ -15,7 +14,7 @@
     />
   </div>
   <div class="alert alert-danger" *ngIf="br.touched && br.invalid">
-    A brand name is required
+    Marque est obligatoire
   </div>
 
   <div class="form-group">
@@ -28,19 +27,18 @@
       required
       minlength="2"
       #md="ngModel"
-      pattern="[a-zA-Z, ]+$"
+      pattern="[a-zA-Z, ,0-9]+$"
     />
   </div>
   <div class="alert alert-danger" *ngIf="md.touched && md.invalid">
-    <div *ngIf="md.errors.required">modele is required</div>
-    <div *ngIf="md.errors.minlength">minlength is 2</div>
-    <div *ngIf="md.errors.pattern">enter a valid modele</div>
+    <div *ngIf="md.errors.required">modele est obligatoire</div>
+    <div *ngIf="md.errors.minlength">minimum 2 caractere</div>
+    <div *ngIf="md.errors.pattern">n'est pas valide</div>
   </div>
 
 
-
   <div class="form-group">
-    <label>date realease</label>
+    <label>Date Fabrication</label>
     <input
       type="date"
       name="dateR"
@@ -52,10 +50,10 @@
   </div>
 
   <div class="alert alert-danger" *ngIf="dt.touched && dt.invalid">
-    A date is required
+    une date est obligatoire
   </div>
   <div class="form-group">
-    <label>pointure </label>
+    <label>Pointure </label>
     <input
       type="number"
       name="point"
@@ -66,27 +64,27 @@
     />
   </div>
   <div class="alert alert-danger" *ngIf="poi.touched && poi.invalid">
-    size is required
+    pointure est obligatoire
   </div>
-  <div class="alert alert-danger" *ngIf="poi.value < 36 || poi.value>48">size between 36 and 48</div>
+  <div class="alert alert-danger" *ngIf="poi.value < 36 || poi.value>48">pointure entre 36 and 48</div>
   <div class="form-group">
-    <label>color </label>
+    <label>Coleur </label>
     <input
       type="text"
       name="color"
       class="form-control"
       [(ngModel)]="shoes.color"
       #c="ngModel"
-      pattern="[a-zA-Z]+$"
+      pattern="[a-zA-Z, ]+$"
       required
     />
   </div>
   <div class="alert alert-danger" *ngIf="c.touched && c.invalid">
-    A color is required
+    coleur est obligatoire
   </div>
 
   <div class="form-group">
-    <label>URL web </label>
+    <label>URL (Lien site Web) </label>
     <input
       type="url"
       name="url"
@@ -102,11 +100,11 @@
     />
   </div>
   <div class="alert alert-danger" *ngIf="w.touched && w.invalid">
-    A Url web is required
+    Url web est obligatoire
   </div>
 
   <div class="form-group">
-    <label>prix </label>
+    <label>Prix </label>
     <input
       type="number"
       name="price"
@@ -117,12 +115,12 @@
     />
   </div>
   <div class="alert alert-danger" *ngIf="p.touched && p.invalid">
-    price is required
+    prix est obligatoire
   </div>
   <div class="alert alert-danger" *ngIf="p.value < 0">prix>0</div>
 
   <div class="form-group">
-    <label>quantite </label>
+    <label>Quantite </label>
     <input
       type="number"
       name="qu"
@@ -134,29 +132,29 @@
   </div>
 
   <div class="alert alert-danger" *ngIf="q.touched && q.invalid">
-   quantity is required
+    Quantite est obligatoire
   </div>
   <div class="alert alert-danger" *ngIf="q.value < 0">quantity>0</div>
 
   <div style="display: flex; justify-content: space-between">
 
 
+    <div class="form-group">
+      <label>Ajouter image</label> <br/>
+      <input type="file" name="title" [(ngModel)]="shoes.image"/>
+    </div>
 
-  <div class="form-group">
-    <label>add image</label> <br />
-    <input type="file" name="title" [(ngModel)]="shoes.image" />
-  </div>
 
+    <div class="form-group">
+      <button
 
-  <div class="form-group">
-    <button
-      class="btn btn-success"
-      type="submit"
-      [disabled]="f.invalid"
-      (click)="save()">
-      <span class="fa fa-save"></span>
-      save
-    </button>
-  </div>
+        class="btn btn-outline-primary"
+        type="submit"
+        [disabled]="f.invalid"
+        (click)="save()">
+        <span class="fa fa-save"></span>
+        Enregistrer
+      </button>
+    </div>
   </div>
 </form>

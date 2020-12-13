@@ -59,7 +59,7 @@ export class ShoeDetailComponent implements OnInit {
   initForm() {
     this.form = new FormGroup({
       brand: new FormControl(this.shoes.brand, {validators: [Validators.required, Validators.pattern('[a-zA-Z, ]+$')]}),
-      modele: new FormControl(this.shoes.modele, {validators: [Validators.required, Validators.pattern('[a-zA-Z, ]+$')]}),
+      modele: new FormControl(this.shoes.modele, {validators: [Validators.required, Validators.pattern('[a-zA-Z, ,0-9]+$')]}),
       size: new FormControl(this.shoes.size, {validators: [Validators.required, Validators.min(36), Validators.max(48)]}),
       color: new FormControl(this.shoes.color, {validators: [Validators.required, Validators.pattern('[a-zA-Z, ]+$')]}),
       quantity: new FormControl(this.shoes.quantity, {validators: [Validators.required, Validators.minLength(1), Validators.maxLength(3)]}),

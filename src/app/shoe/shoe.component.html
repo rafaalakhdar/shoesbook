@@ -16,11 +16,11 @@
                   <th colspan="2">Marque</th>
                   <th>Quantite</th>
                   <th>Modele</th>
-                  <th>pointure</th>
-                  <th>prix</th>
+                  <th>Pointure</th>
+                  <th>Prix</th>
 
-                  <th colspan="2">date de sortie</th>
-                  <th>coleur</th>
+                  <th colspan="2">Date Fabrication</th>
+                  <th>Coleur</th>
                   <th>Total</th>
                   <th></th>
                 </tr>
@@ -52,15 +52,16 @@
                   <td>{{ s.price }}</td>
                   <td>
                     <div>
+                      <button class="btn btn-outline-primary" (click)="open(s.id)">
+                        <i class="fa fa-edit"></i>
+                        Edit
+                      </button>
                       <button class="btn btn-outline-danger" (click)="delete(s.id)">
                         <i class="fa fa-trash-o"></i>
                         Delete
                       </button>
 <!--                      routerLink="/shoe/{{ s.id }}"-->
-                      <button class="btn btn-outline-primary" (click)="open(s.id)">
-                        <i class="fa fa-edit"></i>
-                        Edit
-                      </button>
+
                     </div>
                   </td>
                 </tr>
@@ -79,5 +80,14 @@
     </div>
   </div>
 
+<!-- FOOTER -->
+<footer class="main-footer">
 
+
+  <div class="col-lg-4 text-center-md">
+    <p>&copy; 2020. ShoesBook / Rafaa Lakhdhar</p>
+  </div>
+
+
+</footer>
 

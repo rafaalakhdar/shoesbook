@@ -12,7 +12,7 @@ const routes: Routes = [{path: 'shoe/:id', component: ShoeDetailComponent},
   {path: 'AddShoe', component: AddShoeComponent},
   {path: 'Contact', component: ContactComponent},
   {path: 'Home', component: HomeComponent},
-  {path: '', redirectTo: '/shoeList', pathMatch : 'full'}];
+  {path: '', redirectTo: '/Home', pathMatch : 'full'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

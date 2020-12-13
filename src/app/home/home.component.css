@@ -1,0 +1,54 @@
+.class1
+{-webkit-font-smoothing: antialiased;
+color: #111;
+text-align: center;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+-webkit-tap-highlight-color: rgba(0,0,0,0);}
+.slider{
+-webkit-font-smoothing: antialiased;
+color: #111;
+text-align: center;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+list-style: none;}
+.class2{
+-webkit-font-smoothing: antialiased;
+color: #111;
+list-style: none;
+box-sizing: border-box;
+padding: 0;
+border: 0;
+font: inherit;
+vertical-align: baseline;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+font-size: 0;
+display: inline-block;
+width: 100%;
+text-align: left;
+max-width: 1808px;
+margin: 0px auto;}
+.class3{
+-webkit-font-smoothing: antialiased;
+color: #111;
+text-align: center;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+list-style: none;}
