@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Shoe} from '../model/shoe';
 import {ShoeServiceService} from '../shared/shoe-service.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -10,18 +10,19 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class AddShoeComponent implements OnInit {
 
-  constructor(private service: ShoeServiceService, private route: Router) { }
+  constructor(private service: ShoeServiceService, private route: Router) {
+  }
+
   shoes: Shoe;
 
-  // @Output() eventAddProduct = new EventEmitter<Shoe>();
   ngOnInit(): void {
     this.shoes = new Shoe();
 
   }
 
-  save(){
-    console.log( ' eeee ' , this.shoes);
-    // this.eventAddProduct.emit(this.shoes);
+  save() {
+    console.log(' eeee ', this.shoes);
+
     this.service.adddshoes(this.shoes).subscribe(result => {
       this.route.navigateByUrl('/shoeList', {replaceUrl: true}).then(r => console.log('navig true'));
 

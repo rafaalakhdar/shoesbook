@@ -28,7 +28,7 @@ export class ShoeServiceService {
 
     const url = `${this.url}/${id}`;
     return this.http.get<Shoe>(url).pipe(
-      tap(selectedShoe => console.log(`selected movie = ${JSON.stringify(selectedShoe)}`)),
+      tap(selectedShoe => console.log(`selected = ${JSON.stringify(selectedShoe)}`)),
     catchError(error => of(new Shoe()))
   );
   }
