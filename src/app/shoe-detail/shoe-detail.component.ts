@@ -49,7 +49,7 @@ export class ShoeDetailComponent implements OnInit {
   }
 
   changeImage(evt) {
-    console.log(evt.target.value);
+    console.log(evt.target.value.substr(12));
     this.shoes.image = evt.target.value;
     this.form.patchValue(({
       image: evt.target.value

@@ -4,7 +4,11 @@
 
       <div id="basket" class="col-md-12">
         <div class="box mt-0 pb-0 no-horizontal-padding">
-          <form method="get" action="shop-checkout1.html">
+          <div >
+            <label>Rechercher : </label>
+            <input class="f-r" [(ngModel)]="clientSearchTerm" placeholder="Marque, Modele, Prix, Pointure ..."/>
+          </div>
+          </div>
             <div class="table-responsive">
               <table class="table table-hover">
                 <thead>
@@ -21,7 +25,7 @@
                   <th></th>
                 </tr>
                 </thead>
-                <tbody *ngFor="let s of shoe">
+                <tbody *ngFor="let s of shoe | search:['brand', 'modele', 'price', 'quantity', 'color', 'size', 'web']:clientSearchTerm as Shoe">
                 <tr>
 
 
@@ -67,50 +71,13 @@
 
             </div>
 
-          </form>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-md-6">
-            <div class="box text-uppercase mt-0 mb-2">
-              <h3>You may also like these products</h3>
-            </div>
-          </div>
-          <div class="col-md-3 col-md-6">
-            <div class="product">
-              <div class="image"><a href="shop-detail.html"><img src="assets/images/airforce.jpg" alt=""
-                                                                 class="img-fluid image1"></a></div>
-              <div class="text">
-                <h3 class="h5"><a href="shop-detail.html">FlightClub</a></h3>
-                <p class="price">$140</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-md-6">
-            <div class="product">
-              <div class="image"><a href="shop-detail.html"><img src="assets/images/jordan.jpg" alt=""
-                                                                 class="img-fluid image1"></a></div>
-              <div class="text">
-                <h3 class="h5"><a href="shop-detail.html"> Goat</a></h3>
-                <p class="price">$186</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-md-6">
-            <div class="product">
-              <div class="image"><a href="shop-detail.html"><img src="assets/images/yeezy.png" alt=""
-                                                                 class="img-fluid image1"></a></div>
-              <div class="text">
-                <h3 class="h5"><a href="shop-detail.html">Stockx</a></h3>
-                <p class="price">$123</p>
 
-              </div>
-            </div>
-          </div>
         </div>
+
       </div>
 
     </div>
   </div>
 
-</div>
+
 

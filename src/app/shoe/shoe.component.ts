@@ -13,7 +13,7 @@ import {ShoeDetailComponent} from '../shoe-detail/shoe-detail.component';
 })
 export class ShoeComponent implements OnInit {
   shoe: Shoe[];
-
+  clientSearchTerm: string;
   modalRef: any;
 
   constructor(private service: ShoeServiceService, private syn: DomSanitizer, private modalService: NgbModal) {

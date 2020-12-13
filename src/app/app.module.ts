@@ -11,6 +11,8 @@ import { AddShoeComponent } from './add-shoe/add-shoe.component';
 import { HeaderComponent } from './header/header.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './contact/contact.component';
+import { SearchPipe } from './shared/search.pipe';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ContactComponent } from './contact/contact.component';
     ShoeDetailComponent,
     AddShoeComponent,
     HeaderComponent,
-    ContactComponent
+    ContactComponent,
+    SearchPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
